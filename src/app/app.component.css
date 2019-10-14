@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+    font-family: Arial;
+}
+.bg {
+    /* The image used */
+    background-image: url("../assets/bgimage.jpg");
+    /* Full height */
+    height: 900px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+}
+div {
+    width: 100%;
+}
+
+mat-toolbar {
+    justify-content: center;
+}

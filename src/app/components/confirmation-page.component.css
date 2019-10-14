@@ -1,0 +1,12 @@
+div {
+    width: 80vw;
+    background-color: white;
+    opacity: 0.8;
+    display: flex;
+    margin-top: 30px;
+    padding: 15px 15px 15px 15px;
+    font-family: Arial;
+}
+.twocol {
+    width: 45%;
+}

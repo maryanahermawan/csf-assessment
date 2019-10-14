@@ -1,0 +1,13 @@
+<div>
+    <mat-list>
+            <h2>Your registration is successful. Thank you!</h2>
+            <mat-list-item> Name : {{registrantObj.name}}</mat-list-item>
+            <mat-list-item> Gender : {{registrantObj.gender}}</mat-list-item>
+            <mat-list-item> Date of birth : {{registrantObj.dob}}</mat-list-item>
+            <mat-list-item> Email address: {{registrantObj.email}}  </mat-list-item>
+            <mat-list-item> Phone Number : {{registrantObj.phoneNo}}</mat-list-item>
+            <mat-list-item> Address : {{registrantObj.address}}</mat-list-item>
+            <mat-list-item> Country : {{registrantObj.country}}</mat-list-item>
+            <mat-list-item> Password : {{'*'.repeat(registrantObj.password.length)}}</mat-list-item>
+    </mat-list>
+</div>

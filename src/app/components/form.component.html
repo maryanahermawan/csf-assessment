@@ -1,0 +1,58 @@
+<div>
+    <form [formGroup]="regForm" (ngSubmit)="addRegistrant()" fxLayout="column row" fxlayoutGap="1px"
+        fxLayoutAlign="center space-around">
+        <mat-form-field>
+            <input matInput placeholder="Name*" formControlName="name">
+            <mat-error *ngIf="regForm.invalid">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email*" formControlName="email">
+            <mat-error *ngIf="regForm.invalid">Enter valid email address</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Password*" formControlName="password" type="password">
+            <mat-error *ngIf="regForm.invalid">
+                Password must be at least 8 characters, include both uppercase and lowercase, 
+                include one of special characters @, #, $, must not include other special character, 
+                include at least one numeric digits</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contact number*" formControlName="phoneNo">
+            <mat-error *ngIf="regForm.invalid">Enter valid phone number, only ( ) - + are allowed</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Address*" formControlName="address">
+            <mat-error *ngIf="regForm.invalid">Address is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Country*</mat-label>
+            <mat-select matInput formControlName="country">
+                <mat-option *ngFor="let e of countryArray" [value]="e.name">{{e.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-label for="gender">Gender*</mat-label>
+        <mat-radio-group formControlName="gender" id="gender">
+            <div fxLayout="row column" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <mat-radio-button value="male" class="twocol"> Male </mat-radio-button>
+                <mat-radio-button value="female" class="twocol"> Female </mat-radio-button>
+            </div>
+            <mat-hint *ngIf="regForm.invalid">Gender is required</mat-hint>
+        </mat-radio-group>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dobpicker" placeholder="Date of Birth*" formControlName="dob">
+            <mat-error *ngIf="(regForm.get('dob').errors)?.required">Date of Birth is required</mat-error>
+            <mat-error *ngIf="(regForm.get('dob').errors)?.ageUnderReq">You must be at least 21 year old</mat-error>
+            <mat-datepicker-toggle matSuffix [for]="dobpicker"></mat-datepicker-toggle>
+            <mat-datepicker #dobpicker touchUi="true"></mat-datepicker>
+        </mat-form-field>
+       
+        <div fxLayout="row column" fxLayoutAlign="space-around center">
+            <button mat-raised-button type="submit" color="primary" [disabled]=!regForm.valid>
+                Register
+            </button>
+            <button mat-raised-button type="reset" color="warn">
+                Clear Form
+            </button>
+        </div>
+    </form>
+</div>
