@@ -6,16 +6,34 @@ body {
     /* The image used */
     background-image: url("../assets/bgimage.jpg");
     /* Full height */
-    height: 900px;
+    height: 1000px;
 
     /* Center and scale the image nicely */
     background-position: center;
     background-size: cover;
 }
+
 div {
     width: 100%;
 }
 
-mat-toolbar {
-    justify-content: center;
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+.courseContent {
+    width: 80vw;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.writeup {
+    display: flex;
+    width: 60vw;
+}
+img {
+    object-fit: scale-down;
+    width: 10vw;
+    display: flex;
 }

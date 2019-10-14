@@ -1,9 +1,20 @@
 <body class="bg">
   <title>CSF Registration Form</title>
-  <mat-toolbar>
-      <span>CSF Registration</span>
+  <mat-toolbar color="accent">
+    <span>CSF Registration</span>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" [routerLink]="['/']">home</mat-icon>
   </mat-toolbar>
   <div fxLayout="column row" fxLayoutAlign="center center">
+    <div class="courseContent" fxLayout="row column" fxLayoutAlign="space-around center">
+        <img src='../assets/iss.png'>
+        <div class="writeup">
+          Client Side Foundation: In this course, you will learn about the core Angular’s concepts, like modules, components, directives, 
+          attributes and event bindings, forms. You will learn to make REST calls with the HttpClient, control what 
+          a user sees with client side routing and style your application using Material Design.
+        </div>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </body>
