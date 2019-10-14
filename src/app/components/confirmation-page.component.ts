@@ -10,10 +10,12 @@ import { Registrant } from '../models/registrant';
 export class ConfirmationPageComponent implements OnInit {
   registrantObj: Registrant;
   registrantView = [];
+  regNo: number;
   constructor(private GetRegistrantSvc: ValuePassingService) { }
 
   ngOnInit() {
     this.registrantObj = this.GetRegistrantSvc.retrieveValuesFromService();
+    this.regNo=Math.floor(Math.random()*90000) + 10000;
   }
 
 }

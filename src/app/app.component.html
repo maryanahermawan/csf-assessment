@@ -4,16 +4,19 @@
     <span>CSF Registration</span>
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" [routerLink]="['/']">home</mat-icon>
+    <button mat-icon-button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" [routerLink]="['/']">home</mat-icon>
+    </button>
   </mat-toolbar>
   <div fxLayout="column row" fxLayoutAlign="center center">
-    <div class="courseContent" fxLayout="row column" fxLayoutAlign="space-around center">
-        <img src='../assets/iss.png'>
-        <div class="writeup">
-          Client Side Foundation: In this course, you will learn about the core Angular’s concepts, like modules, components, directives, 
-          attributes and event bindings, forms. You will learn to make REST calls with the HttpClient, control what 
-          a user sees with client side routing and style your application using Material Design.
-        </div>
+    <div class="courseContent" fxLayout="row column" fxLayoutAlign="start center">
+      <img src='../assets/iss.png'>
+      <p style="text-align: center" class="writeup">
+        Client Side Foundation: In this course, you will learn about the core Angular’s concepts, like modules,
+        components, directives,
+        attributes and event bindings, forms. You will learn to make REST calls with the HttpClient, control what
+        a user sees with client side routing and style your application using Material Design.
+      </p>
     </div>
     <router-outlet></router-outlet>
   </div>
